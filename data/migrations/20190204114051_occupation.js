@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("occupation", table => {
     table.increments();
-    table.string("type", 128);
+    table.string("occupation", 128);
   });
 };
 

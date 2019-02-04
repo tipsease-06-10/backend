@@ -21,6 +21,7 @@ exports.up = function(knex, Promise) {
       .references("id")
       .inTable("occupation")
       .onDelete("CASCADE");
+    table.boolean("type_logged_in").defaultTo("false");
   });
 };
 

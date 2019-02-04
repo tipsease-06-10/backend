@@ -6,12 +6,12 @@ module.exports = {
     connection: {
       filename: "./data/eztip.sqlite3"
     },
-    useNullAsDefault: true
-  },
-  migrations: {
-    directory: "./data/migrations"
-  },
-  seeds: {
-    directory: "./data/seeds"
+    useNullAsDefault: true,
+    migrations: {
+      directory: "./data/migrations"
+    },
+    seeds: {
+      directory: "./data/seeds"
+    }
   }
 };

@@ -26,7 +26,7 @@ exports.seed = function(knex, Promise) {
           type_id: 2
         },
         {
-          username: "pewdiepie",
+          username: "ben",
           profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
           working_since: "2012/11",
           first_name: "My Long Lost",

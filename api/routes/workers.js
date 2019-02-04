@@ -7,7 +7,7 @@ route.get("/", async (req, res) => {
     const workers = await db("workers");
     res.status(200).json(workers);
   } catch (err) {
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
 
@@ -19,7 +19,7 @@ route.get("/:id", async (req, res) => {
       .first();
     res.status(200).json(worker);
   } catch (err) {
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
 
@@ -31,7 +31,7 @@ route.post("/", async (req, res) => {
       .status(201)
       .json({ message: `worker created with the id of ${result}` });
   } catch (err) {
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
 
@@ -54,7 +54,7 @@ route.put("/:id", async (req, res) => {
       res.status(404).json({ message: "worker not found" });
     }
   } catch (err) {
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
 

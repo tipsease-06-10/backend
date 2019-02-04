@@ -5,8 +5,6 @@ const workersRoute = require("./routes/workers");
 const usersRoute = require("./routes/users");
 middlewareConfig(server);
 server.use("/workers", workersRoute);
-server.use("/users", usersRoute);
-server.get("/", (req, res) => {
-  res.send("GET: /workers, /workers/:id");
-});
+server.use("/", usersRoute);
+
 module.exports = server;

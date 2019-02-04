@@ -1,10 +1,11 @@
 {
   "name": "eztip-back-end-ben",
   "version": "1.0.0",
-  "description": "",
+  "description": "eztip backend mock",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",

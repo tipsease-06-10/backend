@@ -2,20 +2,20 @@
 
 ### GET:
 
-# /workers
+###### /workers
 
 - returns a list of workers
 
-# /workers/:id
+###### /workers/:id
 
 - returns a worker object with the specified id
 
-# /users
+###### /users
 
 - returns a list of users
 
 ### POST:
 
-# /workers
+###### /workers
 
 - creates a new worker and returns with the id of the created worker

@@ -60,6 +60,14 @@ password:ben
 
 ### POST:
 
+###### /register
+
+- register an user and returns the id of the created user
+
+###### /login
+
+- logs the user in and returns a token
+
 ###### /workers
 
 - creates a new worker and returns with the id of the created worker

@@ -63,3 +63,11 @@ password:ben
 ###### /workers
 
 - creates a new worker and returns with the id of the created worker
+
+### PUT:
+
+###### /workers/:id
+
+- Updates an existing worker with the change, and returns the id of the worker selected
+
+### DELETE:

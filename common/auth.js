@@ -26,5 +26,5 @@ function generateToken(user) {
     username: user.username
   };
   const secret = jwtKey;
-  return jwt.sign(payload, secret, options);
+  return jwt.sign(payload, secret);
 }

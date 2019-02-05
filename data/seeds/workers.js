@@ -13,7 +13,7 @@ exports.seed = function(knex, Promise) {
           last_name: "Man",
           user_type: "guest",
           tagline: "Consecutive Punch!",
-          type_id: 1
+          occupation: "waiter"
         },
         {
           username: "mariekondo",
@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
           last_name: "Kondo",
           user_type: "employee",
           tagline: "does it spark joy?",
-          type_id: 2
+          occupation: "barista"
         },
         {
           username: "pewdiepie",
@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
           last_name: "felix",
           user_type: "employee",
           tagline: "bro fist",
-          type_id: 3
+          occupation: "bellhop"
         },
         {
           username: "ben",
@@ -43,7 +43,7 @@ exports.seed = function(knex, Promise) {
           last_name: "Love",
           user_type: "employee",
           tagline: "Why the friend zone?",
-          type_id: 3
+          occupation: "bellhop"
         }
       ]);
     });

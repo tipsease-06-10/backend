@@ -1,7 +1,18 @@
 const express = require("express");
 const route = express.Router();
+const { multerUploads, dataUri } = require("../../common/multer");
+const { urlencoded } = require("body-parser");
+const { resolve } = require("path");
+const { uploader, cloudinaryConfig } = require("../../config/cloudinary");
+
 const db = require("../../data/dbConfig");
 
+route.use(express.static(resolve(__dirname, "../../public")));
+route.use(urlencoded({ extended: false }));
+route.use("*", cloudinaryConfig);
+route.get("/*", (req, res) => {
+  res.sendFile(resolve(__dirname, "../../public"));
+});
 route.get("/", async (req, res) => {
   try {
     const workers = await db("workers")
@@ -30,16 +41,36 @@ route.get("/:id", async (req, res) => {
       .first();
     const tips = await db("tips")
       .where({ worker_id: id })
-      .select("current_amount", "pending_amount");
+      .select("tip_date", "tip_amount");
     const workerInfo = { ...worker, tips: tips };
     res.status(200).json(workerInfo);
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
-
-route.post("/", async (req, res) => {
+route.post("/upload", multerUploads, async (req, res) => {
+  try {
+    if (req.file) {
+      const file = dataUri(req).content;
+      const result = await uploader.upload(file);
+      const img = result.url;
+      res.status(200).json({
+        message: "image has been uploaded",
+        data: { img }
+      });
+    } else {
+      res.status(400).json({ message: "no file was provided" });
+    }
+  } catch (err) {
+    res.status(400).json({
+      message: `something went wrong while processing the request`,
+      data: { err }
+    });
+  }
+});
+route.post("/", multerUploads, async (req, res) => {
   const newWorker = req.body;
+
   try {
     const result = await db("workers").insert(newWorker);
     res

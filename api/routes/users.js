@@ -6,10 +6,12 @@ const { generateToken } = require("../../common/auth");
 
 route.post("/login", async (req, res) => {
   const credentials = req.body;
+  console.log(credentials);
   try {
     const user = await db("users")
       .where({ username: credentials.username })
       .first();
+    console.log(user);
     if (user && bcrypt.compareSync(credentials.password, user.password)) {
       const token = await generateToken(user);
       const currentUser = await db("workers")

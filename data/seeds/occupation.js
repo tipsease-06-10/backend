@@ -5,9 +5,9 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return knex("occupation").insert([
-        { occupation: "waiter" },
-        { occupation: "barista" },
-        { occupation: "bellhop" }
+        { name: "waiter" },
+        { name: "barista" },
+        { name: "bellhop" }
       ]);
     });
 };

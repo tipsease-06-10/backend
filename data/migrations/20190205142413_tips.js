@@ -3,11 +3,12 @@ exports.up = function(knex, Promise) {
     table.increments();
     table
       .integer("worker_id")
+      .notNullable()
       .references("id")
       .inTable("workers")
-      .notNullable();
-    table.float("current_amount").defaultTo(0);
-    table.float("pending_amount").defaultTo(0);
+      .onDelete("CASCADE");
+    table.datetime("tip_date").defaultTo(knex.fn.now());
+    table.float("tip_amount").notNullable();
   });
 };
 

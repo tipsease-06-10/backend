@@ -6,7 +6,6 @@ const { generateToken } = require("../../common/auth");
 
 route.post("/login", async (req, res) => {
   const credentials = req.body;
-  console.log(credentials);
   try {
     const user = await db("users")
       .where({ username: credentials.username })

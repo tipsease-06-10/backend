@@ -14,7 +14,7 @@
     "first_name": "One Punch",        // defaults to 'Test'  required
     "last_name": "Man",               // defaults to 'Test'  required
     "type_id": 1,                     // defaults to false
-    "is_a_user": 0
+    "user_type": 'employee'
 }
 ```
 
@@ -62,41 +62,38 @@ password:ben
 ```axios.get('yourURL/workers').then(res=> console.log(res)).catch(err=>console.log(err))```
 - console logs 
 ```
-[
-    {
-        "id": 1,
-        "username": "admin",
-        "profile_photo": "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-        "working_since": "2012/11",
-        "tagline": "Consecutive Punch!",
-        "first_name": "One Punch",
-        "last_name": "Man",
-        "type_id": 1,
-        "is_a_user": 0
-    },
-    {
-        "id": 2,
-        "username": "mariekondo",
-        "profile_photo": "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-        "working_since": "2012/11",
-        "tagline": "does it spark joy?",
-        "first_name": "Marie",
-        "last_name": "Kondo",
-        "type_id": 2,
-        "is_a_user": 1
-    },
-    {
-        "id": 3,
-        "username": "ben",
-        "profile_photo": "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-        "working_since": "2012/11",
-        "tagline": "Why the friend zone?",
-        "first_name": "My Long Lost",
-        "last_name": "Love",
-        "type_id": 3,
-        "is_a_user": 1
-    }
-]
+        [
+        {
+          username: "admin",
+          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
+          working_since: "2012/11",
+          first_name: "One Punch",
+          last_name: "Man",
+          user_type: "guest",
+          tagline: "Consecutive Punch!",
+          type_id: 1
+        },
+        {
+          username: "mariekondo",
+          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
+          working_since: "2012/11",
+          first_name: "Marie",
+          last_name: "Kondo",
+          user_type: "employee",
+          tagline: "does it spark joy?",
+          type_id: 2
+        },
+        {
+          username: "ben",
+          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
+          working_since: "2012/11",
+          first_name: "My Long Lost",
+          last_name: "Love",
+          user_type: "employee",
+          tagline: "Why the friend zone?",
+          type_id: 3
+        }
+        ]
 ```
 
 ###### /workers/:id

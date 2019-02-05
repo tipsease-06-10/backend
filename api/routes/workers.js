@@ -68,7 +68,7 @@ route.post("/upload", multerUploads, async (req, res) => {
     });
   }
 });
-route.post("/", multerUploads, async (req, res) => {
+route.post("/", async (req, res) => {
   const newWorker = req.body;
 
   try {

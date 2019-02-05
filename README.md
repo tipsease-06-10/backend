@@ -72,7 +72,14 @@ password:ben
 ###### /workers
 
 - returns a list of workers
-  `axios.get('yourURL/workers').then(res=> console.log(res)).catch(err=>console.log(err))`
+
+```
+axios
+    .get('yourURL/workers')
+    .then(res=> console.log(res))
+    .catch(err=>console.log(err))
+```
+
 - console logs
 
 ```

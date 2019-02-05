@@ -12,10 +12,13 @@ route.post("/login", async (req, res) => {
       .first();
     if (user && bcrypt.compareSync(credentials.password, user.password)) {
       const token = await generateToken(user);
+      const currentUser = await db("workers")
+        .where({ id: user.id })
+        .first();
       res.status(200).json({
         userId: `${user.id}`,
         username: `${user.username}`,
-        user_type: `${user.user_type}`,
+        user_type: `${currentUser.user_type}`,
         token
       });
     } else {

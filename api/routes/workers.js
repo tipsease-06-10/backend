@@ -16,7 +16,7 @@ route.get("/*", (req, res) => {
 route.get("/", async (req, res) => {
   try {
     const workers = await db("workers")
-      .join("occupation", "workers.type_id", "occupation.id")
+      .join("occupation", "workers.occupation", "occupation.name")
       .select(
         "workers.id",
         "workers.username",

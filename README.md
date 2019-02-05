@@ -55,18 +55,17 @@ username:ben
 password:ben
 ```
 
-| Method | Endpoint  | Description                                                                                                                                                                                             |
-| ------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| POST   | /register | Creates a `user` using the information sent inside the `body` of the request.                                                                                                                           |
-| POST   | /login    | Use the credentials sent inside the `body` to authenticate the user. On successful login, returns a message with the username and a JWT token                                                           |
-| POST   | /tips     | Add a new `tip`, supply with `worker_id` and `tip_amount`                                                                                                                                               |
-| GET    | /tips     | Get a list of tips                                                                                                                                                                                      |
-| GET    | /tips/:id | Get a specific tip with the provided id                                                                                                                                                                 |
-| GET    | /workers  | If the user is logged in, respond with an array of all the workers contained in the database. If the worker is not logged in, return a message:"No token provided, must be set on Authorization Header" |
-
-| GET | /workers/:id | If the user is logged in, respond with an object of the worker |
-| PUT | /workers/:id | Creates a new worker and returns with the id of the created worker |
-| POST | /workers | Creates a new worker and returns with the id of the created worker |
+| Method | Endpoint     | Description                                                                                                                                                                                             |
+| ------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| POST   | /register    | Creates a `user` using the information sent inside the `body` of the request.                                                                                                                           |
+| POST   | /login       | Use the credentials sent inside the `body` to authenticate the user. On successful login, returns a message with the username and a JWT token                                                           |
+| POST   | /tips        | Add a new `tip`, supply with `worker_id` and `tip_amount`                                                                                                                                               |
+| GET    | /tips        | Get a list of tips                                                                                                                                                                                      |
+| GET    | /tips/:id    | Get a specific tip with the provided id                                                                                                                                                                 |
+| GET    | /workers     | If the user is logged in, respond with an array of all the workers contained in the database. If the worker is not logged in, return a message:"No token provided, must be set on Authorization Header" |
+| GET    | /workers/:id | If the user is logged in, respond with an object of the worker                                                                                                                                          |
+| PUT    | /workers/:id | Creates a new worker and returns with the id of the created worker                                                                                                                                      |
+| POST   | /workers     | Creates a new worker and returns with the id of the created worker                                                                                                                                      |
 
 ### GET:
 

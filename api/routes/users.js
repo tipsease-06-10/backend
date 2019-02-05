@@ -12,9 +12,12 @@ route.post("/login", async (req, res) => {
       .first();
     if (user && bcrypt.compareSync(credentials.password, user.password)) {
       const token = await generateToken(user);
-      res
-        .status(200)
-        .json({ message: `${user.username} has logged in`, token });
+      res.status(200).json({
+        userId: `${user.id}`,
+        username: `${user.username}`,
+        user_type: `${user.user_type}`,
+        token
+      });
     } else {
       res.status(400).json({ message: "Invalid username or password" });
     }

@@ -26,8 +26,5 @@ function generateToken(user) {
     username: user.username
   };
   const secret = jwtKey;
-  const options = {
-    expiresIn: "30m"
-  };
   return jwt.sign(payload, secret, options);
 }

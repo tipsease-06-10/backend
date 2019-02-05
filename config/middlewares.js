@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 
 module.exports = server => {
-  server.use(cors());
+  server.use(cors({ credentials: true, origin: true }));
   server.use(express.json());
   server.use(helmet());
   server.use(morgan("short"));

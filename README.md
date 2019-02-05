@@ -46,9 +46,12 @@ password:ben
 
 | Method | Endpoint      | Description                                                                                                                                                                                                                                                                                 |
 | ------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| POST   | /api/register | Creates a `user` using the information sent inside the `body` of the request. **Hash the password** before saving the user to the database.                                                                                                                                                 |
-| POST   | /api/login    | Use the credentials sent inside the `body` to authenticate the user. On successful login, create a new session for the user and send back a 'Logged in' message and a cookie that contains the user id. If login fails, respond with the correct status code and the message: 'You shall not pass!' |
-| GET    | /api/users    | If the user is logged in, respond with an array of all the users contained in the database. If the user is not logged in repond with the correct status code and the message: 'You shall not pass!'.            |
+| POST   | /register | Creates a `user` using the information sent inside the `body` of the request.                                                                    |
+| POST   | /login    | Use the credentials sent inside the `body` to authenticate the user. On successful login, returns a message with the username and a JWT token|
+| GET    | /workers    | If the user is logged in, respond with an array of all the workers contained in the database. If the worker is not logged in, return a message:"No token provided, must be set on Authorization Header" |
+| GET    | /workers/:id| If the user is logged in, respond with an object of the worker  |
+| PUT    | /workers/:id| Creates a new worker and returns with the id of the created worker |
+| POST   | /workers    | Creates a new worker and returns with the id of the created worker |
 
 
 ### GET:
@@ -60,10 +63,6 @@ password:ben
 ###### /workers/:id
 
 - returns a worker object with the specified id
-
-###### /users
-
-- returns a list of users
 
 ### POST:
 
@@ -77,4 +76,3 @@ password:ben
 
 - Updates an existing worker with the change, and returns the id of the worker selected
 
-### DELETE:

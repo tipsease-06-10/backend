@@ -60,7 +60,9 @@ password:ben
 
 - returns a list of workers
 ```axios.get('yourURL/workers').then(res=> console.log(res)).catch(err=>console.log(err))```
-- console logs ```[
+- console logs 
+```
+[
     {
         "id": 1,
         "username": "admin",
@@ -94,7 +96,8 @@ password:ben
         "type_id": 3,
         "is_a_user": 1
     }
-]```
+]
+```
 
 ###### /workers/:id
 
@@ -106,7 +109,8 @@ axios
     .catch(err=>console.log(err))
 ```
 - console logs 
-```{
+```
+{
         "id": 1,
         "username": "admin",
         "profile_photo": "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
@@ -116,7 +120,7 @@ axios
         "last_name": "Man",
         "type_id": 1,
         "is_a_user": 0
-    }
+}
 ```
 
 ### POST:

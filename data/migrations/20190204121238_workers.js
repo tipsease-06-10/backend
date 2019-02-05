@@ -24,7 +24,7 @@ exports.up = function(knex, Promise) {
       .references("id")
       .inTable("occupation")
       .onDelete("CASCADE");
-    table.boolean("is_a_user").defaultTo("false");
+    table.boolean("user_type").defaultTo("employee");
   });
 };
 

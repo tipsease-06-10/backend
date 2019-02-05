@@ -11,7 +11,7 @@ exports.seed = function(knex, Promise) {
           working_since: "2012/11",
           first_name: "One Punch",
           last_name: "Man",
-          is_a_user: false,
+          user_type: "guest",
           tagline: "Consecutive Punch!",
           type_id: 1
         },
@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
           working_since: "2012/11",
           first_name: "Marie",
           last_name: "Kondo",
-          is_a_user: true,
+          user_type: "employee",
           tagline: "does it spark joy?",
           type_id: 2
         },
@@ -31,7 +31,7 @@ exports.seed = function(knex, Promise) {
           working_since: "2012/11",
           first_name: "My Long Lost",
           last_name: "Love",
-          is_a_user: true,
+          user_type: "employee",
           tagline: "Why the friend zone?",
           type_id: 3
         }

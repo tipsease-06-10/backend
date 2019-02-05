@@ -2,7 +2,7 @@ const express = require("express");
 const route = express.Router();
 const db = require("../../data/dbConfig");
 const bcrypt = require("bcryptjs");
-const { authenticate, generateToken } = require("../../common/auth");
+const { generateToken } = require("../../common/auth");
 
 route.post("/login", async (req, res) => {
   const credentials = req.body;
@@ -44,14 +44,6 @@ route.post("/register", async (req, res) => {
     }
   } catch (err) {
     res.status(500).json({ message: "Internal server error", err: err });
-  }
-});
-route.get("/users", authenticate, async (req, res) => {
-  try {
-    const users = await db("users");
-    res.status(200).json(users);
-  } catch (err) {
-    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 

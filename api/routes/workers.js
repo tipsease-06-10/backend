@@ -4,7 +4,18 @@ const db = require("../../data/dbConfig");
 
 route.get("/", async (req, res) => {
   try {
-    const workers = await db("workers");
+    const workers = await db("workers")
+      .join("occupation", "workers.type_id", "occupation.id")
+      .select(
+        "workers.id",
+        "workers.username",
+        "workers.profile_photo",
+        "workers.working_since",
+        "workers.first_name",
+        "workers.last_name",
+        "workers.tagline",
+        "workers.user_type"
+      );
     res.status(200).json(workers);
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error", err: err });
@@ -17,7 +28,11 @@ route.get("/:id", async (req, res) => {
     const worker = await db("workers")
       .where({ id })
       .first();
-    res.status(200).json(worker);
+    const tips = await db("tips")
+      .where({ worker_id: id })
+      .select("current_amount", "pending_amount");
+    const workerInfo = { ...worker, tips: tips };
+    res.status(200).json(workerInfo);
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }

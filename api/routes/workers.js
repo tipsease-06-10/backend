@@ -1,11 +1,11 @@
 const express = require("express");
 const route = express.Router();
-const { multerUploads, dataUri } = require("../../common/multer");
+// const { multerUploads, dataUri } = require("../../common/multer");
 
-const { uploader, cloudinaryConfig } = require("../../config/cloudinary");
+// const { uploader, cloudinaryConfig } = require("../../config/cloudinary");
 
 const db = require("../../data/dbConfig");
-cloudinaryConfig(route);
+// cloudinaryConfig(route);
 
 route.get("/", async (req, res) => {
   try {

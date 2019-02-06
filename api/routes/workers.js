@@ -95,9 +95,14 @@ route.put("/:id", async (req, res) => {
         .where({ id })
         .first()
         .update(change);
-      res.status(202).json({
-        message: `worker with the id of ${updateId} has been updated`
-      });
+      const worker = await db("workers")
+        .where({ id: updateId })
+        .first();
+      const tips = await db("tips")
+        .where({ worker_id: updateId })
+        .select("tip_date", "tip_amount");
+      const workerInfo = { ...worker, tips: tips };
+      res.status(202).json(workerInfo);
     } else {
       res.status(404).json({ message: "worker not found" });
     }

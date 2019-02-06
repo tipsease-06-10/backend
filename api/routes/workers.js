@@ -35,32 +35,31 @@ route.get("/", async (req, res) => {
   }
 });
 
-route.post("/:id/upload", multerUploads, async (req, res) => {
-  const { id } = req.params;
-  // console.log(imgUrl);
-  try {
-    const file = dataUri(req).content;
-    const result = await uploader.upload(file);
-    const imgUrl = result.url;
-    await db("workers")
-      .where({ id })
-      .first()
-      .update({ profile_photo: imgUrl });
-    if (req.file) {
-      res.status(200).json({
-        message: `image has been uploaded`,
-        data: { imgUrl }
-      });
-    } else {
-      res.status(400).json({ message: "no file was provided" });
-    }
-  } catch (err) {
-    res.status(400).json({
-      message: `something went wrong while processing the request`,
-      data: { err }
-    });
-  }
-});
+// route.post("/:id/upload", multerUploads, async (req, res) => {
+//   const { id } = req.params;
+//   try {
+//     const file = dataUri(req).content;
+//     const result = await uploader.upload(file);
+//     const imgUrl = result.url;
+//     await db("workers")
+//       .where({ id })
+//       .first()
+//       .update({ profile_photo: imgUrl });
+//     if (req.file) {
+//       res.status(200).json({
+//         message: `image has been uploaded`,
+//         data: { imgUrl }
+//       });
+//     } else {
+//       res.status(400).json({ message: "no file was provided" });
+//     }
+//   } catch (err) {
+//     res.status(400).json({
+//       message: `something went wrong while processing the request`,
+//       data: { err }
+//     });
+//   }
+// });
 route.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {

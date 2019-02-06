@@ -54,6 +54,7 @@ route.post("/:id/upload", multerUploads, async (req, res) => {
     });
   }
 });
+
 route.put("/:id/upload", multerUploads, async (req, res) => {
   const { id } = req.params;
   try {
@@ -79,6 +80,7 @@ route.put("/:id/upload", multerUploads, async (req, res) => {
     });
   }
 });
+
 route.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -108,7 +110,7 @@ route.post("/", async (req, res) => {
   }
 });
 
-route.put("/:id", async (req, res) => {
+route.put("/:id", multerUploads, async (req, res) => {
   const { id } = req.params;
   const change = req.body;
   try {
@@ -116,15 +118,15 @@ route.put("/:id", async (req, res) => {
       .where({ id })
       .first();
     if (chosen) {
-      const updateId = await db("workers")
+      await db("workers")
         .where({ id })
         .first()
         .update(change);
       const worker = await db("workers")
-        .where({ id: updateId })
+        .where({ id: id })
         .first();
       const tips = await db("tips")
-        .where({ worker_id: updateId })
+        .where({ worker_id: id })
         .select("tip_date", "tip_amount");
       const workerInfo = { ...worker, tips: tips };
       res.status(202).json(workerInfo);

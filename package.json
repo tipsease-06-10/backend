@@ -36,7 +36,6 @@
     "stripe": "^6.23.1"
   },
   "devDependencies": {
-    "dotenv": "^6.2.0",
     "nodemon": "^1.18.9"
   }
 }

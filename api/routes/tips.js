@@ -35,7 +35,8 @@ const stripeCharge = async amount => {
   console.log("*******************", charge);
 };
 route.post("/charge", async (req, res) => {
-  stripeCharge();
+  const tip = req.body;
+  stripeCharge(tip);
 });
 route.post("/", async (req, res) => {
   const newTip = req.body;

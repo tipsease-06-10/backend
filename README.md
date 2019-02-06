@@ -6,14 +6,10 @@
 
 ```
 {
-    "id": 1,
-    "username": "admin",
-    "profile_photo": "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-    "working_since": "2012/11",       // defaults to 'input tag line'
-    "tagline": "Consecutive Punch!",  // defaults to 'Test'
+    "username": "admin",              // required
     "first_name": "One Punch",        // defaults to 'Test'  required
     "last_name": "Man",               // defaults to 'Test'  required
-    "type_id": 1,                     // defaults to false
+    "occupation":"barista"            // required
     "user_type": 'employee'
 }
 ```
@@ -22,9 +18,7 @@
 
 ```
 {
-        "id": 1,
         "worker_id": 1,                     // required
-        "tip_date": "2019-02-03 21:58:19",  // defaults to current time
         "tip_amount": 10                    // required
 }
 ```
@@ -33,7 +27,6 @@
 
 ```
 {
-    "id":1
     "username":'admin',  // required
     "password":'admin'   // required
 }
@@ -86,6 +79,7 @@ axios
 ```
         [
         {
+          id:1,
           username: "admin",
           profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
           working_since: "2012/11",
@@ -96,6 +90,7 @@ axios
          occupation: waiter
         },
         {
+          id:2,
           username: "mariekondo",
           profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
           working_since: "2012/11",
@@ -106,6 +101,7 @@ axios
          occupation: barista
         },
         {
+          id:3,
           username: "pewdiepie",
           profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
           working_since: "2012/11",
@@ -115,7 +111,8 @@ axios
           tagline: "bro fist",
          occupation: bellhop
         },
-        {
+        { 
+          id:4,
           username: "ben",
           profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
           working_since: "2012/11",
@@ -143,6 +140,7 @@ axios
 
 ```
         {
+          id:1,
           username: "admin",
           profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
           working_since: "2012/11",
@@ -150,7 +148,7 @@ axios
           last_name: "Man",
           user_type: "guest",
           tagline: "Consecutive Punch!",
-          occupation:'waiter
+          occupation:'waiter'
         }
 ```
 

@@ -13,7 +13,6 @@ route.get("/", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
-
 route.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -38,13 +37,24 @@ route.post("/charge", async (req, res) => {
   const tip = req.body;
   stripeCharge(tip);
 });
+
 route.post("/", async (req, res) => {
   const newTip = req.body;
-
   try {
     const result = await db("tips").insert(newTip);
 
     res.status(201).json({ message: `tip created with the id of ${result}` });
+  } catch (err) {
+    res.status(500).json({ message: "Internal Server Error", err: err });
+  }
+});
+route.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await db("tips")
+      .where({ id })
+      .del();
+    res.status(202).json({ message: "tip deleted", id });
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }

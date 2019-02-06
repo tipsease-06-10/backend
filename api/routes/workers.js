@@ -73,12 +73,15 @@ route.get("/:id", async (req, res) => {
 
 route.post("/", async (req, res) => {
   const newWorker = req.body;
-
   try {
     const result = await db("workers").insert(newWorker);
-    res
-      .status(201)
-      .json({ message: `worker created with the id of ${result}` });
+    await db("occupation").insert({
+      name: newWorker.occupation
+    });
+    res.status(201).json({
+      id: result[0],
+      message: `worker created with the id of ${result}`
+    });
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }
@@ -91,7 +94,7 @@ route.put("/:id", multerUploads, async (req, res) => {
     const chosen = await db("workers")
       .where({ id })
       .first();
-    if (chosen) {
+    if (chosen && !change.occupation) {
       await db("workers")
         .where({ id })
         .first()
@@ -102,6 +105,26 @@ route.put("/:id", multerUploads, async (req, res) => {
       const tips = await db("tips")
         .where({ worker_id: id })
         .select("tip_date", "tip_amount");
+      const workerInfo = { ...worker, tips: tips };
+      res.status(202).json(workerInfo);
+    } else if (chosen && change.occupation) {
+      const occupation = await db("occupation")
+        .where({ name: change.occupation })
+        .first();
+      if (!occupation) {
+        await db("occupation").insert({ name: change.occupation });
+      }
+      await db("workers")
+        .where({ id })
+        .first()
+        .update(change);
+      const worker = await db("workers")
+        .where({ id: id })
+        .first();
+      const tips = await db("tips")
+        .where({ worker_id: id })
+        .select("tip_date", "tip_amount");
+
       const workerInfo = { ...worker, tips: tips };
       res.status(202).json(workerInfo);
     } else {

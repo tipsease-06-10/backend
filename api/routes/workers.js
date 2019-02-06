@@ -1,18 +1,11 @@
 const express = require("express");
 const route = express.Router();
 const { multerUploads, dataUri } = require("../../common/multer");
-const { urlencoded } = require("body-parser");
 
 const { uploader, cloudinaryConfig } = require("../../config/cloudinary");
 
 const db = require("../../data/dbConfig");
-
-// route.use(express.static(resolve(__dirname, "../../public")));
-route.use(urlencoded({ extended: false }));
 cloudinaryConfig(route);
-// route.get("/*", (req, res) => {
-//   res.sendFile(resolve(__dirname, "../../public"));
-// });
 
 route.get("/", async (req, res) => {
   try {

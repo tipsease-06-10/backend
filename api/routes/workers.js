@@ -3,7 +3,7 @@ const route = express.Router();
 const { multerUploads, dataUri } = require("../../common/multer");
 const { urlencoded } = require("body-parser");
 
-const { uploader, cloudinaryConfig } = require("../../common/cloudinary");
+const { uploader, cloudinaryConfig } = require("../../config/cloudinary");
 
 const db = require("../../data/dbConfig");
 

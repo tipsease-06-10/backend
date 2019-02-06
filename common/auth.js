@@ -7,15 +7,18 @@ module.exports = {
 };
 
 function authenticate(req, res, next) {
-  const token = req.get("Authorization");
+  const token = req.headers.authorization;
   if (token) {
     jwt.verify(token, jwtKey, (err, decoded) => {
-      if (err) return res.status(401).json(err);
-      req.decoded = decoded;
-      next();
+      if (err) {
+        res.status(401).json(err);
+      } else {
+        req.decoded = decoded;
+        next();
+      }
     });
   } else {
-    return res.status(402).json({
+    return res.status(401).json({
       message: "No token provided, must be set on Authorization Header"
     });
   }

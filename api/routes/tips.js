@@ -40,7 +40,6 @@ route.post("/charge", async (req, res) => {
 });
 route.post("/", async (req, res) => {
   const newTip = req.body;
-
   try {
     const result = await db("tips").insert(newTip);
 

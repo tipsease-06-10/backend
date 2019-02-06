@@ -6,10 +6,7 @@ exports.up = function(knex, Promise) {
       .unique()
       .notNullable();
     table.string("password", 255).notNullable();
-    table
-      .string("user_type", 128)
-      .notNullable()
-      .defaultTo("employee");
+    table.string("user_type", 128).defaultTo("employee");
   });
 };
 

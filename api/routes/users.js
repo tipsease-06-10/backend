@@ -15,6 +15,8 @@ route.post("/login", async (req, res) => {
       const currentUser = await db("users")
         .where({ username: user.username })
         .first();
+      console.log(currentUser);
+      console.log(user);
       res.status(200).json({
         userId: `${user.id}`,
         username: `${user.username}`,

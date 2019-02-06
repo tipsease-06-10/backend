@@ -12,8 +12,8 @@ route.post("/login", async (req, res) => {
       .first();
     if (user && bcrypt.compareSync(credentials.password, user.password)) {
       const token = await generateToken(user);
-      const currentUser = await db("workers")
-        .where({ id: user.id })
+      const currentUser = await db("users")
+        .where({ username: user.username })
         .first();
       res.status(200).json({
         userId: `${user.id}`,
@@ -25,7 +25,7 @@ route.post("/login", async (req, res) => {
       res.status(400).json({ message: "Invalid username or password" });
     }
   } catch (err) {
-    res.json({ message: "Internal Server Error", err: err });
+    res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
 
@@ -48,7 +48,10 @@ route.post("/register", async (req, res) => {
       user = await db("users")
         .where({ id: userId[0] })
         .first();
-      res.status(201).json({ userId: userId[0], username: user.username });
+      const token = await generateToken(user);
+      res
+        .status(201)
+        .json({ userId: userId[0], username: user.username, token });
     }
   } catch (err) {
     res.status(500).json({ message: "Internal server error", err: err });

@@ -26,7 +26,10 @@ exports.up = function(knex, Promise) {
       .references("name")
       .inTable("occupation")
       .onDelete("CASCADE");
-    table.string("user_type").defaultTo("employee");
+    table
+      .string("user_type")
+      .references("user_type")
+      .inTable("users");
   });
 };
 

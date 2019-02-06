@@ -7,12 +7,12 @@ const { uploader, cloudinaryConfig } = require("../../common/cloudinary");
 
 const db = require("../../data/dbConfig");
 
-route.use(express.static(resolve(__dirname, "../../public")));
+// route.use(express.static(resolve(__dirname, "../../public")));
 route.use(urlencoded({ extended: false }));
 route.use("*", cloudinaryConfig);
-route.get("/*", (req, res) => {
-  res.sendFile(resolve(__dirname, "../../public"));
-});
+// route.get("/*", (req, res) => {
+//   res.sendFile(resolve(__dirname, "../../public"));
+// });
 
 route.get("/", async (req, res) => {
   try {
@@ -35,6 +35,32 @@ route.get("/", async (req, res) => {
   }
 });
 
+route.post("/:id/upload", multerUploads, async (req, res) => {
+  const { id } = req.params;
+  // console.log(imgUrl);
+  try {
+    const file = dataUri(req).content;
+    const result = await uploader.upload(file);
+    const imgUrl = result.url;
+    await db("workers")
+      .where({ id })
+      .first()
+      .update({ profile_photo: imgUrl });
+    if (req.file) {
+      res.status(200).json({
+        message: `image has been uploaded`,
+        data: { imgUrl }
+      });
+    } else {
+      res.status(400).json({ message: "no file was provided" });
+    }
+  } catch (err) {
+    res.status(400).json({
+      message: `something went wrong while processing the request`,
+      data: { err }
+    });
+  }
+});
 route.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -50,26 +76,6 @@ route.get("/:id", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
-// route.post("/upload", multerUploads, async (req, res) => {
-//   try {
-//     if (req.file) {
-//       const file = dataUri(req).content;
-//       const result = await uploader.upload(file);
-//       const img = result.url;
-//       res.status(200).json({
-//         message: "image has been uploaded",
-//         data: { img }
-//       });
-//     } else {
-//       res.status(400).json({ message: "no file was provided" });
-//     }
-//   } catch (err) {
-//     res.status(400).json({
-//       message: `something went wrong while processing the request`,
-//       data: { err }
-//     });
-//   }
-// });
 
 route.post("/", async (req, res) => {
   const newWorker = req.body;

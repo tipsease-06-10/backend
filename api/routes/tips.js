@@ -24,18 +24,37 @@ route.get("/:id", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
-const stripeCharge = async amount => {
-  const charge = await stripe.charges.create({
-    amount: amount,
-    currency: "usd",
-    source: "tok_visa",
-    receipt_email: "jenny.rosen@example.com"
-  });
-  console.log("*******************", charge);
-};
+// const stripeCharge = async amount => {
+//   const charge = await stripe.charges.create({
+//     amount: amount,
+//     currency: "usd",
+//     source: "tok_visa",
+//     receipt_email: "jenny.rosen@example.com"
+//   });
+//   console.log("*******************", charge);
+// };
+// route.post("/charge", async (req, res) => {
+//   const tip = req.body;
+//   stripeCharge(tip);
+// });
+
 route.post("/charge", async (req, res) => {
-  const tip = req.body;
-  stripeCharge(tip);
+  let amount = 500;
+  try {
+    const customer = await stripe.customers.create({
+      email: req.body.email,
+      card: req.body.id
+    });
+    console.log(customer);
+    const charge = stripe.charges.create({
+      amount,
+      description: "Sample Charge",
+      currency: "usd",
+      customer: customer.id
+    });
+  } catch (err) {
+    console.log(err, "failed");
+  }
 });
 
 route.post("/", async (req, res) => {

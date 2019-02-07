@@ -1,3 +1,19 @@
+const faker = require("faker");
+
+// class RandomName {
+//   constructor() {
+//     this.username = faker.name.firstName();
+//     this.profile_photo = faker.image.avatar();
+//     this.first_name = faker.name.firstName();
+//     this.last_name = faker.name.lastName();
+//     this.working_since = faker.date.past();
+//     this.tagline = faker.hacker.phrase();
+//     this.occupation = "waiter";
+//   }
+// }
+// let randomWorker = () => {
+//   return new RandomName();
+// };
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex("workers")
@@ -44,6 +60,146 @@ exports.seed = function(knex, Promise) {
           user_type: "employee",
           tagline: "Why the friend zone?",
           occupation: "bellhop"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
+        },
+        {
+          username: faker.name.firstName(),
+          profile_photo: faker.image.avatar(),
+          working_since: "2012/11",
+          first_name: faker.name.firstName(),
+          last_name: faker.name.lastName(),
+          user_type: "employee",
+          tagline: faker.hacker.phrase(),
+          occupation: "waiter"
         }
       ]);
     });

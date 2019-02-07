@@ -66,7 +66,7 @@ exports.seed = function(knex, Promise) {
         {
           username: faker.name.firstName(),
           profile_photo:
-            "https://us.123rf.com/450wm/lithian/lithian1509/lithian150900132/45607000-portrait-of-a-young-dreamy-brunette-beauty-with-windswept-hair-.jpg?ver=6",
+            "https://images.unsplash.com/photo-1484086471933-a4fcb164629c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
           working_since: "2012/11",
           first_name: "Sandrine",
           last_name: faker.name.lastName(),

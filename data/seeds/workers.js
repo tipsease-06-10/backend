@@ -66,7 +66,7 @@ exports.seed = function(knex, Promise) {
         {
           username: faker.name.firstName(),
           profile_photo:
-            "https://us.123rf.com/450wm/lithian/lithian1509/lithian150900132/45607000-portrait-of-a-young-dreamy-brunette-beauty-with-windswept-hair-.jpg?ver=6",
+            "https://images.unsplash.com/photo-1484086471933-a4fcb164629c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
           working_since: "2012/11",
           first_name: "Sandrine",
           last_name: faker.name.lastName(),
@@ -109,7 +109,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://images.pexels.com/photos/428321/pexels-photo-428321.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=500&w=500",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -119,7 +120,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://amsi.org.au/wp-content/uploads/2014/09/am_m1_0758-500x500.jpg",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -129,7 +131,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://www.bth.se/wp-content/uploads/2017/10/Untitled-500x500.jpg",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -139,7 +142,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "http://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201303/172530850.jpg",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -149,7 +153,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://static1.squarespace.com/static/59d4e11803596e8c6624ca73/t/5a08f090e4966b7f02b812d7/1510535317781/blockfivehundred-1.jpg",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -159,7 +164,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo: "https://source.unsplash.com/random/500x500",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -169,7 +174,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://images.unsplash.com/photo-1515640235930-7548bc94d6d3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -179,7 +185,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://images.unsplash.com/photo-1535468850893-d6e543fbd7f5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -189,7 +196,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://images.unsplash.com/photo-1528660994940-d847063abf56?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -199,7 +207,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.image.imageUrl(500, 500, "people"),
+          profile_photo:
+            "https://images.unsplash.com/photo-1469460340997-2f854421e72f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),

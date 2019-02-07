@@ -41,17 +41,29 @@ route.get("/:id", async (req, res) => {
 route.post("/charge", async (req, res) => {
   let amount = 500;
   try {
+    // const token = await stripe.tokens.create({
+    //   card: {
+    //     number: "4242424242424242",
+    //     exp_month: 12,
+    //     exp_year: 2020,
+    //     cvc: "123"
+    //   }
+    // });
+
+    // console.log("token", token);
     const customer = await stripe.customers.create({
       email: req.body.email,
-      card: req.body.id
+      card: "tok_visa"
     });
-    console.log(customer);
-    const charge = stripe.charges.create({
+    console.log("****", customer);
+    const charge = await stripe.charges.create({
       amount,
       description: "Sample Charge",
       currency: "usd",
       customer: customer.id
     });
+    console.log("charge", charge);
+    res.status(200).send(charge);
   } catch (err) {
     console.log(err, "failed");
   }

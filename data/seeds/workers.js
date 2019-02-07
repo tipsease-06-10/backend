@@ -65,9 +65,10 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo:
+            "https://us.123rf.com/450wm/lithian/lithian1509/lithian150900132/45607000-portrait-of-a-young-dreamy-brunette-beauty-with-windswept-hair-.jpg?ver=6",
           working_since: "2012/11",
-          first_name: faker.name.firstName(),
+          first_name: "Sandrine",
           last_name: faker.name.lastName(),
           user_type: "employee",
           tagline: faker.hacker.phrase(),
@@ -75,10 +76,11 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo:
+            "https://cucuru.media/wp-content/uploads/2017/05/628456560-20170428100109-e1493341315516.jpg",
           working_since: "2012/11",
-          first_name: faker.name.firstName(),
-          last_name: faker.name.lastName(),
+          first_name: "Liz",
+          last_name: "Hahm",
           user_type: "employee",
           tagline: faker.hacker.phrase(),
           occupation: "waiter"

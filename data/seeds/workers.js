@@ -23,7 +23,8 @@ exports.seed = function(knex, Promise) {
       return knex("workers").insert([
         {
           username: "admin",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
+          profile_photo:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
           working_since: "2012/11",
           first_name: "One Punch",
           last_name: "Man",
@@ -33,7 +34,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: "mariekondo",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
+          profile_photo: "https://pbs.twimg.com/media/DaWpr8HX4AAuUvz.jpg",
           working_since: "2012/11",
           first_name: "Marie",
           last_name: "Kondo",
@@ -43,7 +44,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: "pewdiepie",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
+          profile_photo:
+            "http://www.gstatic.com/tv/thumb/persons/835149/835149_v9_bb.jpg",
           working_since: "2012/11",
           first_name: "pewds",
           last_name: "felix",
@@ -53,10 +55,10 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: "ben",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
+          profile_photo: "https://i.imgur.com/S8hd8t0.png",
           working_since: "2012/11",
-          first_name: "My Long Lost",
-          last_name: "Love",
+          first_name: "Ben",
+          last_name: "Tsao",
           user_type: "employee",
           tagline: "Why the friend zone?",
           occupation: "bellhop"

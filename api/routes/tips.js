@@ -24,6 +24,7 @@ route.get("/:id", async (req, res) => {
     res.status(500).json({ message: "Internal Server Error", err: err });
   }
 });
+
 // const stripeCharge = async amount => {
 //   const charge = await stripe.charges.create({
 //     amount: amount,
@@ -46,6 +47,7 @@ route.get("/:id", async (req, res) => {
 //     cvc: "123"
 //   }
 // });
+
 route.post("/charge", async (req, res) => {
   let amount = 500;
   try {

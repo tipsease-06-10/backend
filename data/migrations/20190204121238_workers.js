@@ -21,11 +21,10 @@ exports.up = function(knex, Promise) {
       .notNullable()
       .defaultTo("");
     table
-      .integer("occupation")
+      .string("occupation")
       .notNullable()
       .references("name")
-      .inTable("occupation")
-      .onDelete("CASCADE");
+      .inTable("occupation");
     table
       .string("user_type")
       .references("user_type")

@@ -9,20 +9,7 @@ cloudinaryConfig(route);
 
 route.get("/", async (req, res) => {
   try {
-    const workers = await db("workers")
-      .join("occupation", "workers.occupation", "occupation.name")
-      .select(
-        "workers.id",
-        "workers.username",
-        "workers.profile_photo",
-        "workers.working_since",
-        "workers.first_name",
-        "workers.last_name",
-        "workers.tagline",
-        "workers.user_type",
-        "workers.occupation"
-      )
-      .orderBy("workers.id");
+    const workers = await db("workers");
     res.status(200).json(workers);
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error", err: err });
@@ -79,9 +66,12 @@ route.post("/", async (req, res) => {
   const newWorker = req.body;
   try {
     const result = await db("workers").insert(newWorker);
-    await db("occupation").insert({
-      name: newWorker.occupation
-    });
+    const search = await db("occupation").where({ name: newWorker.occupation });
+    if (!search.length) {
+      await db("occupation").insert({
+        name: newWorker.occupation
+      });
+    }
     res.status(201).json({
       id: result[0],
       message: `worker created with the id of ${result}`

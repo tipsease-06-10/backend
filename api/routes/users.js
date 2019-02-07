@@ -15,8 +15,6 @@ route.post("/login", async (req, res) => {
       const currentUser = await db("users")
         .where({ username: user.username })
         .first();
-      console.log(currentUser);
-      console.log(user);
       res.status(200).json({
         userId: `${user.id}`,
         username: `${user.username}`,
@@ -52,14 +50,12 @@ route.post("/register", async (req, res) => {
         .where({ id: userId[0] })
         .first();
       const token = await generateToken(user);
-      res
-        .status(201)
-        .json({
-          userId: userId[0],
-          username: user.username,
-          token,
-          user_type: user.user_type
-        });
+      res.status(201).json({
+        userId: userId[0],
+        username: user.username,
+        token,
+        user_type: user.user_type
+      });
     }
   } catch (err) {
     res.status(500).json({ message: "Internal server error", err: err });

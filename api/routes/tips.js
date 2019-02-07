@@ -38,19 +38,17 @@ route.get("/:id", async (req, res) => {
 //   stripeCharge(tip);
 // });
 
+// const token = await stripe.tokens.create({
+//   card: {
+//     number: "4242424242424242",
+//     exp_month: 12,
+//     exp_year: 2020,
+//     cvc: "123"
+//   }
+// });
 route.post("/charge", async (req, res) => {
   let amount = 500;
   try {
-    // const token = await stripe.tokens.create({
-    //   card: {
-    //     number: "4242424242424242",
-    //     exp_month: 12,
-    //     exp_year: 2020,
-    //     cvc: "123"
-    //   }
-    // });
-
-    // console.log("token", token);
     const customer = await stripe.customers.create({
       email: req.body.email,
       card: "tok_visa"

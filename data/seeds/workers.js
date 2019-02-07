@@ -87,7 +87,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo:
+            "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -97,7 +98,8 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo:
+            "https://channel-korea.com/wp-content/uploads/2017/09/IU_1476317492_af_org-e1506689157858.jpg",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -107,7 +109,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -117,7 +119,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -127,7 +129,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -137,7 +139,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -147,7 +149,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -157,7 +159,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -167,7 +169,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -177,7 +179,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -187,7 +189,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
@@ -197,7 +199,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           username: faker.name.firstName(),
-          profile_photo: faker.internet.avatar(),
+          profile_photo: faker.image.imageUrl(500, 500, "people"),
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),

@@ -208,7 +208,7 @@ exports.seed = function(knex, Promise) {
         {
           username: faker.name.firstName(),
           profile_photo:
-            "https://images.unsplash.com/photo-1469460340997-2f854421e72f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
+            "https://images.unsplash.com/photo-1518199259649-1ba3b8f79306?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9",
           working_since: "2012/11",
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),

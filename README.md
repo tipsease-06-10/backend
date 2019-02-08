@@ -163,7 +163,7 @@ axios
 
 ```
 [
-    {
+     {
         "id": 1,
         "worker_id": 1,
         "tip_date": "2019-02-03 21:58:19",
@@ -192,12 +192,12 @@ axios
 - console logs
 
 ```
-    {
-        "id": 1,
-        "worker_id": 1,
-        "tip_date": "2019-02-03 21:58:19",
-        "tip_amount": 10
-    }
+{
+    "id": 1,
+    "worker_id": 1,
+    "tip_date": "2019-02-03 21:58:19",
+    "tip_amount": 10
+}
 ```
 
 ### POST:

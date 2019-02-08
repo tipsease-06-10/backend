@@ -22,7 +22,7 @@ route.post("/login", async (req, res) => {
         .where({ username: user.username })
         .first();
       res.status(200).json({
-        userId: `${user.id}`,
+        userId: user.id,
         username: `${user.username}`,
         user_type: `${currentUser.user_type}`,
         token

@@ -26,6 +26,11 @@ exports.seed = function(knex, Promise) {
           username: "ben",
           password: bcrypt.hashSync("ben", 11),
           user_type: "employee"
+        },
+        {
+          username: "jfluke",
+          password: bcrypt.hashSync("grindreel", 11),
+          user_type: "employee"
         }
       ]);
     });

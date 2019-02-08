@@ -77,52 +77,29 @@ axios
 - console logs
 
 ```
-        [
-        {
-          id:1,
-          username: "admin",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "One Punch",
-          last_name: "Man",
-          user_type: "guest",
-          tagline: "Consecutive Punch!",
-         occupation: waiter
-        },
-        {
-          id:2,
-          username: "mariekondo",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "Marie",
-          last_name: "Kondo",
-          user_type: "employee",
-          tagline: "does it spark joy?",
-         occupation: barista
-        },
-        {
-          id:3,
-          username: "pewdiepie",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "pewds",
-          last_name: "felix",
-          user_type: "employee",
-          tagline: "bro fist",
-         occupation: bellhop
-        },
-        {
-          id:4,
-          username: "ben",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "My Long Lost",
-          last_name: "Love",
-          user_type: "employee",
-          tagline: "Why the friend zone?",
-         occupation: bellhop
-        }
-      ]
+       [
+    {
+        "id": 1,
+        "username": "admin",
+        "profile_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
+        "working_since": "2012/11",
+        "tagline": "Consecutive Punch!",
+        "first_name": "One Punch",
+        "last_name": "Mann",
+        "occupation": "waiter",
+        "user_type": "guest"
+    },
+    {
+        "id": 2,
+        "username": "mariekondo",
+        "profile_photo": "https://pbs.twimg.com/media/DaWpr8HX4AAuUvz.jpg",
+        "working_since": "2012/11",
+        "tagline": "does it spark joy?",
+        "first_name": "Marie",
+        "last_name": "Kondo",
+        "occupation": "barista",
+        "user_type": "employee"
+    }]
 ```
 
 ###### /workers/:id

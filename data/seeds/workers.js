@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
         {
           username: "admin",
           profile_photo:
-            "https://blogs.forbes.com/olliebarder/files/2018/05/onepunchman_season2.jpg",
+            "https://i.kym-cdn.com/photos/images/newsfeed/001/050/209/b01.png",
           working_since: "2012/11",
           first_name: "One Punch",
           last_name: "Man",

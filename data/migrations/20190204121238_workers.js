@@ -28,7 +28,8 @@ exports.up = function(knex, Promise) {
     table
       .string("user_type")
       .references("user_type")
-      .inTable("users");
+      .inTable("users")
+      .defaultTo("employee");
   });
 };
 

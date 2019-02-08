@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
         {
           username: "admin",
           profile_photo:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
+            "https://blogs.forbes.com/olliebarder/files/2018/05/onepunchman_season2.jpg",
           working_since: "2012/11",
           first_name: "One Punch",
           last_name: "Man",
@@ -40,18 +40,18 @@ exports.seed = function(knex, Promise) {
           last_name: "Kondo",
           user_type: "employee",
           tagline: "does it spark joy?",
-          occupation: "barista"
+          occupation: "Professional Tidy Artist"
         },
         {
-          username: "pewdiepie",
+          username: "jfluke",
           profile_photo:
-            "http://www.gstatic.com/tv/thumb/persons/835149/835149_v9_bb.jpg",
-          working_since: "2012/11",
-          first_name: "pewds",
-          last_name: "felix",
+            "https://yt3.ggpht.com/a-/AAuE7mAG2AqrY2_yCmgb-rxFK1Dy_KUm918CwR99ag=s900-mo-c-c0xffffffff-rj-k-no",
+          working_since: "2017/10",
+          first_name: "Josh",
+          last_name: "Fluke",
           user_type: "employee",
-          tagline: "bro fist",
-          occupation: "bellhop"
+          tagline: "Python's where it's at!",
+          occupation: "GrindReel Overlord"
         },
         {
           username: "ben",
@@ -61,7 +61,7 @@ exports.seed = function(knex, Promise) {
           last_name: "Tsao",
           user_type: "employee",
           tagline: "Why the friend zone?",
-          occupation: "bellhop"
+          occupation: "Street Performer"
         },
         {
           username: faker.name.firstName(),

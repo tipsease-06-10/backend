@@ -163,7 +163,7 @@ axios
 
 ```
 [
-    {
+     {
         "id": 1,
         "worker_id": 1,
         "tip_date": "2019-02-03 21:58:19",
@@ -192,12 +192,12 @@ axios
 - console logs
 
 ```
-    {
-        "id": 1,
-        "worker_id": 1,
-        "tip_date": "2019-02-03 21:58:19",
-        "tip_amount": 10
-    }
+{
+    "id": 1,
+    "worker_id": 1,
+    "tip_date": "2019-02-03 21:58:19",
+    "tip_amount": 10
+}
 ```
 
 ### POST:
@@ -206,9 +206,27 @@ axios
 
 - register an user and returns the id of the created user
 
+- returns
+```
+{
+    "userId": 9,
+    "username": "admsin",
+    "token": "gakjsdgfjkwhgjfgmjagjhgfkeawgwaefsdfsadfasefsafsafas",
+    "user_type": "employee"
+}
+```
+
 ###### /login
 
 - logs the user in and returns a token
+```
+{
+    "userId": "9",
+    "username": "admsin",
+    "user_type": "employee",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbXNpbiIsImlhdCI6MTU0OTU5ODY2MX0.JsWkCCCjRg9pDzJ3LOTTW8wf3tjqQ6129u8SHTEt7mA"
+}
+```
 
 ###### /workers
 

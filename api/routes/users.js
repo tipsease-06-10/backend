@@ -3,7 +3,13 @@ const route = express.Router();
 const db = require("../../data/dbConfig");
 const bcrypt = require("bcryptjs");
 const { generateToken } = require("../../common/auth");
-
+route.get("/", async (req, res) => {
+  try {
+    res.status(200).json({ message: "sanity check" });
+  } catch (err) {
+    res.status(500).json({ message: "server is not working" });
+  }
+});
 route.post("/login", async (req, res) => {
   const credentials = req.body;
   try {

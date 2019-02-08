@@ -77,52 +77,29 @@ axios
 - console logs
 
 ```
-        [
-        {
-          id:1,
-          username: "admin",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "One Punch",
-          last_name: "Man",
-          user_type: "guest",
-          tagline: "Consecutive Punch!",
-         occupation: waiter
-        },
-        {
-          id:2,
-          username: "mariekondo",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "Marie",
-          last_name: "Kondo",
-          user_type: "employee",
-          tagline: "does it spark joy?",
-         occupation: barista
-        },
-        {
-          id:3,
-          username: "pewdiepie",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "pewds",
-          last_name: "felix",
-          user_type: "employee",
-          tagline: "bro fist",
-         occupation: bellhop
-        },
-        { 
-          id:4,
-          username: "ben",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "My Long Lost",
-          last_name: "Love",
-          user_type: "employee",
-          tagline: "Why the friend zone?",
-         occupation: bellhop
-        }
-      ]
+       [
+    {
+        "id": 1,
+        "username": "admin",
+        "profile_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
+        "working_since": "2012/11",
+        "tagline": "Consecutive Punch!",
+        "first_name": "One Punch",
+        "last_name": "Mann",
+        "occupation": "waiter",
+        "user_type": "guest"
+    },
+    {
+        "id": 2,
+        "username": "mariekondo",
+        "profile_photo": "https://pbs.twimg.com/media/DaWpr8HX4AAuUvz.jpg",
+        "working_since": "2012/11",
+        "tagline": "does it spark joy?",
+        "first_name": "Marie",
+        "last_name": "Kondo",
+        "occupation": "barista",
+        "user_type": "employee"
+    }]
 ```
 
 ###### /workers/:id
@@ -140,16 +117,35 @@ axios
 
 ```
         {
-          id:1,
-          username: "admin",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "One Punch",
-          last_name: "Man",
-          user_type: "guest",
-          tagline: "Consecutive Punch!",
-          occupation:'waiter'
+    "id": 1,
+    "username": "admin",
+    "profile_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
+    "working_since": "2012/11",
+    "tagline": "Consecutive Punch!",
+    "first_name": "One Punch",
+    "last_name": "Mann",
+    "occupation": "waiter",
+    "user_type": "guest",
+    "tips": [
+        {
+            "tip_date": "2019-02-03 21:58:19",
+            "tip_amount": 10
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 5.25
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 7.8
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 9.9
         }
+    ],
+    "total_tip": 32.95
+}
 ```
 
 ###### /tips
@@ -167,7 +163,7 @@ axios
 
 ```
 [
-    {
+     {
         "id": 1,
         "worker_id": 1,
         "tip_date": "2019-02-03 21:58:19",
@@ -196,12 +192,12 @@ axios
 - console logs
 
 ```
-    {
-        "id": 1,
-        "worker_id": 1,
-        "tip_date": "2019-02-03 21:58:19",
-        "tip_amount": 10
-    }
+{
+    "id": 1,
+    "worker_id": 1,
+    "tip_date": "2019-02-03 21:58:19",
+    "tip_amount": 10
+}
 ```
 
 ### POST:
@@ -210,9 +206,27 @@ axios
 
 - register an user and returns the id of the created user
 
+- returns
+```
+{
+    "userId": 9,
+    "username": "admsin",
+    "token": "gakjsdgfjkwhgjfgmjagjhgfkeawgwaefsdfsadfasefsafsafas",
+    "user_type": "employee"
+}
+```
+
 ###### /login
 
 - logs the user in and returns a token
+```
+{
+    "userId": "9",
+    "username": "admsin",
+    "user_type": "employee",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbXNpbiIsImlhdCI6MTU0OTU5ODY2MX0.JsWkCCCjRg9pDzJ3LOTTW8wf3tjqQ6129u8SHTEt7mA"
+}
+```
 
 ###### /workers
 
@@ -228,7 +242,10 @@ axios
 - console logs
 
 ```
-message: worker created with the id of 1
+{
+    "id": 21,
+    "message": "worker created with the id of 21"
+}
 ```
 
 ###### /workers/:id/upload
@@ -261,4 +278,38 @@ axios
     .put('yourURL/workers/id',change)
     .then(res=> console.log(res))
     .catch(err=> console.log(err))
+```
+
+- console logs
+
+```
+{
+    "id": 1,
+    "username": "admin",
+    "profile_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
+    "working_since": "2012/11",
+    "tagline": "Consecutive Punch!",
+    "first_name": "One Punch",
+    "last_name": "Mann",
+    "occupation": "waiter",
+    "user_type": "guest",
+    "tips": [
+        {
+            "tip_date": "2019-02-03 21:58:19",
+            "tip_amount": 10
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 5.25
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 7.8
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 9.9
+        }
+    ]
+}
 ```

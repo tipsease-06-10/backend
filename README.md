@@ -111,7 +111,7 @@ axios
           tagline: "bro fist",
          occupation: bellhop
         },
-        { 
+        {
           id:4,
           username: "ben",
           profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
@@ -140,16 +140,35 @@ axios
 
 ```
         {
-          id:1,
-          username: "admin",
-          profile_photo: "https://i.ibb.co/FBQXmjV/Missing-avatar-svg.png",
-          working_since: "2012/11",
-          first_name: "One Punch",
-          last_name: "Man",
-          user_type: "guest",
-          tagline: "Consecutive Punch!",
-          occupation:'waiter'
+    "id": 1,
+    "username": "admin",
+    "profile_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
+    "working_since": "2012/11",
+    "tagline": "Consecutive Punch!",
+    "first_name": "One Punch",
+    "last_name": "Mann",
+    "occupation": "waiter",
+    "user_type": "guest",
+    "tips": [
+        {
+            "tip_date": "2019-02-03 21:58:19",
+            "tip_amount": 10
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 5.25
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 7.8
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 9.9
         }
+    ],
+    "total_tip": 32.95
+}
 ```
 
 ###### /tips
@@ -228,7 +247,10 @@ axios
 - console logs
 
 ```
-message: worker created with the id of 1
+{
+    "id": 21,
+    "message": "worker created with the id of 21"
+}
 ```
 
 ###### /workers/:id/upload
@@ -261,4 +283,38 @@ axios
     .put('yourURL/workers/id',change)
     .then(res=> console.log(res))
     .catch(err=> console.log(err))
+```
+
+- console logs
+
+```
+{
+    "id": 1,
+    "username": "admin",
+    "profile_photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6_nkVgvmr5atTYATHSKriNP-AGyW7vJG9gJKVNlxdDwAKZjD",
+    "working_since": "2012/11",
+    "tagline": "Consecutive Punch!",
+    "first_name": "One Punch",
+    "last_name": "Mann",
+    "occupation": "waiter",
+    "user_type": "guest",
+    "tips": [
+        {
+            "tip_date": "2019-02-03 21:58:19",
+            "tip_amount": 10
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 5.25
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 7.8
+        },
+        {
+            "tip_date": "2019-02-05 21:58:19",
+            "tip_amount": 9.9
+        }
+    ]
+}
 ```

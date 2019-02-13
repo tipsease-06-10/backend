@@ -57,7 +57,7 @@ password:ben
 | GET    | /tips/:id           | Get a specific tip with the provided id                                                                                                                                                                 |
 | GET    | /workers            | If the user is logged in, respond with an array of all the workers contained in the database. If the worker is not logged in, return a message:"No token provided, must be set on Authorization Header" |
 | GET    | /workers/:id        | If the user is logged in, respond with an object of the worker                                                                                                                                          |
-| PUT    | /workers/:id        | Creates a new worker and returns with the id of the created worker                                                                                                                                      |
+| PUT    | /workers/:id        | Updates a worker with the supplied info and return with the updated worker detail                                                                                                                                      |
 | POST   | /workers            | Creates a new worker and returns with the id of the created worker                                                                                                                                      |
 | POST   | /workers/:id/upload | Post an image file to the specific worker profile                                                                                                                                                       |
 

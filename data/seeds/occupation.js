@@ -7,7 +7,9 @@ exports.seed = function(knex, Promise) {
       return knex("occupation").insert([
         { name: "waiter" },
         { name: "barista" },
-        { name: "bellhop" }
+        { name: "bellhop" },
+        { name: "Professional Tidy Artist" },
+        { name: "GrindReel Overlord" }
       ]);
     });
 };

@@ -50,16 +50,16 @@ password:ben
 
 | Method | Endpoint            | Description                                                                                                                                                                                             |
 | ------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| POST   | /register           | Register a new `USER` using the information provided in the command.                                                                                                                           |
+| POST   | /register           | Register a new `user` using the information provided in the command.                                                                                                                           |
 | POST   | /login              | Use the credentials provided in the command to authenticate the user. On successful login, display a message with the username and a JWT token                                                           |
-| POST   | /tips               | Add a new `TIP` for a worker, include `worker_id` as the first argument and `tip_amount` as the second                                                                                                                                               |
-| GET    | /tips               | Get a list of tips for all workers                                                                                                                                                                                      |
-| GET    | /tips/:id           | Get the tip for a specific worker using id                                                                                                                                                                 |
-| GET    | /workers            | If the user is logged in, display an array of all the workers contained in the database. If the user is not logged in, display a message:"No token provided, must be set on Authorization Header" |
-| GET    | /workers/:id        | If the user is logged in, display an object of the worker                                                                                                                                          |
-| PUT    | /workers/:id        | Updates a worker with new information and display the updated worker details                                                                                                                                      |
-| POST   | /workers            | Creates a new worker and dispalys the id of the created worker                                                                                                                                      |
-| POST   | /workers/:id/upload | Upload an image file to the specific worker's profile                                                                                                                                                       |
+| POST   | /tips               | Add a new `tip` for a worker, include `worker_id` as the first argument and `tip_amount` as the second                                                                                                                                               |
+| GET    | /tips               | Get a list of `tips` for all `workers`                                                                                                                                                                                      |
+| GET    | /tips/:id           | Get the `tip` for a specific `worker` using `id`                                                                                                                                                                 |
+| GET    | /workers            | If the `user` is logged in, display an array of all the `workers` contained in the database. If the `user` is not logged in, display a message:"No token provided, must be set on Authorization Header" |
+| GET    | /workers/:id        | If the `user` is logged in, display an object of the `worker`                                                                                                                                          |
+| PUT    | /workers/:id        | Updates a `worker` with new information and display the updated `worker`'s details                                                                                                                                      |
+| POST   | /workers            | Creates a new `worker` and dispalys the `id` of the created `worker`                                                                                                                                     |
+| POST   | /workers/:id/upload | Upload an image file to the specific `worker`'s profile                                                                                                                                                       |
 
 ### GET:
 
